@@ -343,6 +343,33 @@ public class CalcBrainTest {
         assertEquals(Float.parseFloat(expectedResult.replaceAll("^[^\\n]*\\n",""))
                    , Float.parseFloat(result.replaceAll("^[^\\n]*\\n",""))
                     ,delta);        
-    }            
+    }
+    @Test
+    public void testSubtractExponents() {
+        System.out.println("Testing subtract decimal exponents");
+        
+        Calculations instance = new CalcBrain();
+        instance.digit("5.4");
+        instance.enterPressed();
+        instance.digit("3");
+        instance.enterPressed();
+        instance.operator("^");
+        instance.digit("6.9");
+        instance.enterPressed();
+        instance.digit("2");
+        instance.enterPressed();
+        instance.operator("^");
+        
+        String result = instance.operator("-");
+        
+        String expectedResult = " +\n109.854 ";
+    
+        float delta = 0.0001f;
+    
+        assertEquals(Float.parseFloat(expectedResult.replaceAll("^[^\\n]*\\n",""))
+                   , Float.parseFloat(result.replaceAll("^[^\\n]*\\n",""))
+                    ,delta);
+        
+    }
     
 }
