@@ -35,11 +35,11 @@ public class CalcBrain implements Calculations {
                 nums.push(value);
                 operand = "";
             }
+            if (nums.size() < 2){
+                return "";
+            } else {
             Float num2 = nums.pop();
-            /* If stack is still not empty after first pop, 
-            pop another value and conduct the math. */
-            if (!nums.empty()) {
-                Float num1 = nums.pop();
+            Float num1 = nums.pop();
                 switch(op) {
                     case "+":
                         total = num1 + num2;
@@ -59,10 +59,6 @@ public class CalcBrain implements Calculations {
                 }   
                 nums.push(total);
                 return op + "\n" + total + " ";
-            } else {
-                // Push the first value back to stack if no math has occurred.
-                nums.push(num2);
-                return "";
             }
         } else {
             return "";
