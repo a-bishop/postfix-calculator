@@ -4,7 +4,7 @@ import java.lang.*;
 
 /**
  *
- * @Andrew Bishop, student #C0344994
+ * @Andrew Bishop
  */
 
 public class CalcBrain implements Calculations {
